@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Archive</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .search-container { margin: 20px; }
+        .results { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <h1>Searchable Book Archive</h1>
+        <input type="text" id="search-input" placeholder="Search for books..." />
+        <select id="category-filter">
+            <option value="all">All Categories</option>
+            <option value="fiction">Fiction</option>
+            <option value="non-fiction">Non-Fiction</option>
+            <option value="science">Science</option>
+            <option value="history">History</option>
+        </select>
+        <button id="search-button">Search</button>
+    </div>
+    <div class="results" id="results">
+        <!-- Book results will be displayed here -->
+    </div>
+    <script>
+        document.getElementById('search-button').onclick = function() {
+            // Placeholder for search functionality
+            const searchInput = document.getElementById('search-input').value;
+            const categoryFilter = document.getElementById('category-filter').value;
+            document.getElementById('results').innerHTML = `<p>Searching for: ${searchInput} in category: ${categoryFilter}</p>`;
+        };
+    </script>
+</body>
+</html>
