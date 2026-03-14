@@ -3,36 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Archive</title>
-    <style>
-        body { font-family: Arial, sans-serif; }
-        .search-container { margin: 20px; }
-        .results { margin-top: 20px; }
-    </style>
+    <title>BBB Digital Archive</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="search-container">
-        <h1>Searchable Book Archive</h1>
-        <input type="text" id="search-input" placeholder="Search for books..." />
-        <select id="category-filter">
-            <option value="all">All Categories</option>
-            <option value="fiction">Fiction</option>
-            <option value="non-fiction">Non-Fiction</option>
-            <option value="science">Science</option>
-            <option value="history">History</option>
-        </select>
-        <button id="search-button">Search</button>
+    <div class="container">
+        <header>
+            <h1>BBB Digital Archive</h1>
+            <p class="subtitle">Search and explore our collection of digital books</p>
+        </header>
+
+        <div class="search-section">
+            <div class="search-controls">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    class="search-input" 
+                    placeholder="Search by book title or author..."
+                >
+                <select id="categoryFilter" class="category-filter">
+                    <option value="">All Categories</option>
+                </select>
+                <button id="searchBtn" class="search-button">Search</button>
+            </div>
+        </div>
+
+        <div class="results-info">
+            <p id="resultsCount">Showing 0 results</p>
+        </div>
+
+        <div class="books-grid" id="booksContainer">
+            <!-- Books will be displayed here -->
+        </div>
     </div>
-    <div class="results" id="results">
-        <!-- Book results will be displayed here -->
-    </div>
-    <script>
-        document.getElementById('search-button').onclick = function() {
-            // Placeholder for search functionality
-            const searchInput = document.getElementById('search-input').value;
-            const categoryFilter = document.getElementById('category-filter').value;
-            document.getElementById('results').innerHTML = `<p>Searching for: ${searchInput} in category: ${categoryFilter}</p>`;
-        };
-    </script>
+
+    <script src="script.js"></script>
 </body>
 </html>
