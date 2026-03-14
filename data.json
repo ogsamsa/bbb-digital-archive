@@ -1,0 +1,20 @@
+[
+    {
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "category": "Classic Literature",
+        "url": "https://example.com/great-gatsby.pdf"
+    },
+    {
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "category": "Classic Literature",
+        "url": "https://example.com/to-kill-a-mockingbird.pdf"
+    },
+    {
+        "title": "The Haunting of Hill House",
+        "author": "Shirley Jackson",
+        "category": "Horror",
+        "url": "https://example.com/haunting-of-hill-house.pdf"
+    }
+]
