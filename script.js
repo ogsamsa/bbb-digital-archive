@@ -3,7 +3,7 @@ let allBooks = [];
 // Load data on page load
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        const response = await fetch('data.json');
+        const response = await fetch('https://raw.githubusercontent.com/ogsamsa/bbb-digital-archive/main/data.json');
         allBooks = await response.json();
         populateCategoryFilter();
         displayBooks(allBooks);
