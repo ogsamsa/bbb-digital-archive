@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // Populate category dropdown
 function populateCategoryFilter() {
-    const categories = [...new Set(allBooks.map(book => book.category))].sort();
+    const categories = [...new Set(allBooks.flatMap(book => book.categories))].sort();
     const filterSelect = document.getElementById('categoryFilter');
     
     categories.forEach(category => {
@@ -41,7 +41,7 @@ function performSearch() {
             book.title.toLowerCase().includes(searchTerm) || 
             book.author.toLowerCase().includes(searchTerm);
         
-        const matchesCategory = !categoryFilter || book.category === categoryFilter;
+        const matchesCategory = !categoryFilter || book.categories.includes(categoryFilter);
         
         return matchesSearch && matchesCategory;
     });
@@ -65,7 +65,7 @@ function displayBooks(books) {
         <div class="book-card">
             <div class="book-title">${escapeHtml(book.title)}</div>
             <div class="book-author">by ${escapeHtml(book.author)}</div>
-            <div class="book-category">${escapeHtml(book.category)}</div>
+            <div class="book-category">${escapeHtml(book.categories[0])}</div>
             <a href="${book.url}" target="_blank" class="book-link">Access Book</a>
         </div>
     `).join('');
